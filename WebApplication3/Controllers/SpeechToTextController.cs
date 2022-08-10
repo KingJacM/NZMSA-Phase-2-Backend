@@ -5,6 +5,8 @@ using System;
 using Google.Apis.Auth.OAuth2;
 using WebApplication3.Data;
 using WebApplication3.Models;
+using Microsoft.EntityFrameworkCore;
+
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WebApplication3.Controllers
@@ -61,6 +63,7 @@ namespace WebApplication3.Controllers
                 isVIP = false,
                 Type = "audio/mpeg3"
             };
+            Console.WriteLine("===================================");
             _context.Add(data);
             _context.SaveChanges();
         }
