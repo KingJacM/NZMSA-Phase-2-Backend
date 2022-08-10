@@ -9,5 +9,6 @@ The Middleware via DI ensures a loose coupling and a more flexible code style. I
 The appsettings.json enables us to have different configuration ie.Connection string in different environment. So we can have a production database and a development database (if necessary). Please note that I used SQLite database for development and SQL database for production, therefore it might need further editing before running different enviroment - reason I does this is because I'm seeking to deploy the API to Azure, but hadn't finish by the time of submission.
 
 edit: Finished initial deployment: https://speechtotextapplication320220810130715.azurewebsites.net/swagger/index.html
+edit: the credential file was removed. Please request for the file for using Google API or using the link above to test.
 
 The testing middlewares basically help us to mock a test more easily. Note the in the testing project I hadn't change the test function after I made some edits to the main project.
