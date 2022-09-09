@@ -12,7 +12,7 @@ namespace WebApplication3.Data
         }
 
 
-        public DbSet<SpeechFile> SpeechFiles { get; set; }
+        public virtual DbSet<SpeechFile> SpeechFiles { get; set; }
     }
  }
 

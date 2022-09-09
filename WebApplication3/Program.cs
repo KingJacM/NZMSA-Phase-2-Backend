@@ -4,6 +4,7 @@ using WebApplication3.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using Microsoft.EntityFrameworkCore.Design;
+
 var builder = WebApplication.CreateBuilder(args);
 
 ConfigurationManager configuration = builder.Configuration;
@@ -15,13 +16,11 @@ builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
-        b => b.AllowAnyHeader()
-        .AllowAnyOrigin()
-        .AllowAnyMethod());
+        b => b.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 });
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddDbContext<FileDBContext>(options => options.UseSqlServer(configuration.GetConnectionString("GoogleConnection")));
+builder.Services.AddDbContext<FileDBContext>(options => options.UseSqlServer(configuration.GetConnectionString("MysqlConnection")));
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
@@ -51,7 +50,7 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 
-
+app.UseCors();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
